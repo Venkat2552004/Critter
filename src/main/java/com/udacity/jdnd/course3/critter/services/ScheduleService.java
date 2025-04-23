@@ -14,6 +14,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Transactional
 @Service
 public class ScheduleService {
 
@@ -48,7 +49,6 @@ public class ScheduleService {
         return scheduleRepo.getAllByPetsIn(customer.getPets());
     }
 
-    @Transactional
     public Schedule createAndSaveSchedule(Schedule schedule, List<Long> employeeIds, List<Long> petIds) { 
         List<Employee> employees = empRepo.findAllById(employeeIds);
         List<Pet> pets = petRepo.findAllById(petIds);

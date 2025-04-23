@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Transactional
 @Service
 public class CustomerService {
     @Autowired
@@ -28,7 +29,6 @@ public class CustomerService {
         return petRepo.getOne(petId).getCustomer();
     }
 
-    @Transactional
     public Customer createOrUpdateCustomer(Customer customer, List<Long> petIds) {
         List<Pet> pets = new ArrayList<>();
         if (petIds != null && !petIds.isEmpty()) {

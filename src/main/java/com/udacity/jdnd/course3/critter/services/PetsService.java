@@ -10,6 +10,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+@Transactional
 @Service
 public class PetsService {
 
@@ -31,7 +32,6 @@ public class PetsService {
         return petRepo.getOne(petId);
     }
 
-    @Transactional
     public Pet createOrUpdatePet(Pet pet, long ownerId) {
         Customer customer = custRepo.getOne(ownerId);
         pet.setCustomer(customer);

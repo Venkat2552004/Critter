@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+@Transactional
 @Service
 public class EmployeeService {
 
@@ -34,7 +35,6 @@ public class EmployeeService {
         return empRepo.save(employee);
     }
 
-    @Transactional
     public void updateEmployeeAvailability(Set<DayOfWeek> daysAvailable, long employeeId) {
         Employee employee = empRepo.getOne(employeeId);
         employee.setDaysAvailable(daysAvailable);
