@@ -2,7 +2,9 @@ package com.udacity.jdnd.course3.critter.entities;
 
 import java.time.DayOfWeek;
 import java.util.Set;
-import com.udacity.jdnd.course3.critter.user.EmployeeSkill;
+
+import com.udacity.jdnd.course3.critter.enums.EmployeeSkill;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -63,11 +65,7 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", skills=" + skills +
-                ", daysAvailable=" + daysAvailable +
-                '}';
+        return String.format("Employee[id=%d, name='%s', skills=%s, daysAvailable=%s]", 
+                id, name, skills, daysAvailable);
     }
 }

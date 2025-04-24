@@ -73,12 +73,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", notes='" + notes + '\'' +
-                ", pets=" + pets +
-                '}';
+        return String.format("Customer[id=%d, name='%s', phone='%s', notes='%s', petsCount=%d]", 
+                id, name, phoneNumber, notes, pets != null ? pets.size() : 0);
     }
 }

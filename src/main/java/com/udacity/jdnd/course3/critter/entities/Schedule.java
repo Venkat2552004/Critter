@@ -3,7 +3,9 @@ package com.udacity.jdnd.course3.critter.entities;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.Set;
-import com.udacity.jdnd.course3.critter.user.EmployeeSkill;
+
+import com.udacity.jdnd.course3.critter.enums.EmployeeSkill;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -76,12 +78,7 @@ public class Schedule {
 
     @Override
     public String toString() {
-        return "Schedule{" +
-                "id=" + id +
-                ", employees=" + employees +
-                ", pets=" + pets +
-                ", date=" + date +
-                ", activities=" + activities +
-                '}';
+        return String.format("Schedule[id=%d, date=%s, employeesCount=%d, petsCount=%d, activities=%s]", 
+                id, date, employees != null ? employees.size() : 0, pets != null ? pets.size() : 0, activities);
     }
 }

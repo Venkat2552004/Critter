@@ -10,7 +10,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Transactional
 @Service
@@ -22,19 +21,29 @@ public class CustomerService {
     private PetRepo petRepo;
 
     public List<Customer> retrieveAllCustomers() {
-        return customerRepo.findAll();
+        List<Customer> result = new ArrayList<>();
+        for (Customer customer : customerRepo.findAll()) {
+            result.add(customer); // Include all customers, regardless of pets
+        }
+        return result;
     }
 
     public Customer findCustomerByPetId(long petId) {
-        return petRepo.getOne(petId).getCustomer();
+        Pet pet = petRepo.findById(petId).orElse(null);
+        return pet != null ? pet.getCustomer() : null;
     }
 
     public Customer createOrUpdateCustomer(Customer customer, List<Long> petIds) {
         List<Pet> pets = new ArrayList<>();
         if (petIds != null && !petIds.isEmpty()) {
-            pets = petIds.stream().map(petRepo::getOne).collect(Collectors.toList());
+            for (Long petId : petIds) {
+                Pet pet = petRepo.findById(petId).orElse(null);
+                if (pet != null) {
+                    pets.add(pet);
+                }
+            }
         }
-        customer.setPets(pets);
-        return customerRepo.save(customer);
+        customer.setPets(pets); // Ensure pets list is set, even if empty
+        return customerRepo.save(customer); // Save customer regardless of pets
     }
 }

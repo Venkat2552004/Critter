@@ -29,14 +29,9 @@
 				"url": {
 					"raw": "http://localhost:8082/user/customer",
 					"protocol": "http",
-					"host": [
-						"localhost"
-					],
+					"host": ["localhost"],
 					"port": "8082",
-					"path": [
-						"user",
-						"customer"
-					]
+					"path": ["user", "customer"]
 				}
 			},
 			"response": []
@@ -65,13 +60,9 @@
 				"url": {
 					"raw": "http://localhost:8082/pet",
 					"protocol": "http",
-					"host": [
-						"localhost"
-					],
+					"host": ["localhost"],
 					"port": "8082",
-					"path": [
-						"pet"
-					]
+					"path": ["pet"]
 				}
 			},
 			"response": []
@@ -100,14 +91,9 @@
 				"url": {
 					"raw": "http://localhost:8082/user/employee",
 					"protocol": "http",
-					"host": [
-						"localhost"
-					],
+					"host": ["localhost"],
 					"port": "8082",
-					"path": [
-						"user",
-						"employee"
-					]
+					"path": ["user", "employee"]
 				}
 			},
 			"response": []
@@ -136,15 +122,9 @@
 				"url": {
 					"raw": "http://localhost:8082/user/employee/1",
 					"protocol": "http",
-					"host": [
-						"localhost"
-					],
+					"host": ["localhost"],
 					"port": "8082",
-					"path": [
-						"user",
-						"employee",
-						"1"
-					]
+					"path": ["user", "employee", "1"]
 				}
 			},
 			"response": []
@@ -176,15 +156,9 @@
 				"url": {
 					"raw": "http://localhost:8082/user/employee/availability",
 					"protocol": "http",
-					"host": [
-						"localhost"
-					],
+					"host": ["localhost"],
 					"port": "8082",
-					"path": [
-						"user",
-						"employee",
-						"availability"
-					]
+					"path": ["user", "employee", "availability"]
 				}
 			},
 			"response": []
@@ -192,7 +166,7 @@
 		{
 			"name": "Create Schedule",
 			"request": {
-				"method": "PUT",
+				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
@@ -203,7 +177,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "[\"MONDAY\", \"TUESDAY\", \"FRIDAY\"]",
+					"raw": "{\n  \"date\": \"2023-10-01\",\n  \"activities\": [\"PETTING\", \"FEEDING\"],\n  \"employeeIds\": [1],\n  \"petIds\": [1]\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -211,17 +185,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8082/user/employee/1",
+					"raw": "http://localhost:8082/schedule",
 					"protocol": "http",
-					"host": [
-						"localhost"
-					],
+					"host": ["localhost"],
 					"port": "8082",
-					"path": [
-						"user",
-						"employee",
-						"1"
-					]
+					"path": ["schedule"]
 				}
 			},
 			"response": []
@@ -253,15 +221,9 @@
 				"url": {
 					"raw": "http://localhost:8082/schedule/pet/1",
 					"protocol": "http",
-					"host": [
-						"localhost"
-					],
+					"host": ["localhost"],
 					"port": "8082",
-					"path": [
-						"schedule",
-						"pet",
-						"1"
-					]
+					"path": ["schedule", "pet", "1"]
 				}
 			},
 			"response": []
@@ -291,17 +253,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8082/schedule/employee/2",
+					"raw": "http://localhost:8082/schedule/employee/1",
 					"protocol": "http",
-					"host": [
-						"localhost"
-					],
+					"host": ["localhost"],
 					"port": "8082",
-					"path": [
-						"schedule",
-						"employee",
-						"2"
-					]
+					"path": ["schedule", "employee", "1"]
 				}
 			},
 			"response": []
@@ -331,17 +287,11 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8082/schedule/employee/2",
+					"raw": "http://localhost:8082/schedule/customer/1",
 					"protocol": "http",
-					"host": [
-						"localhost"
-					],
+					"host": ["localhost"],
 					"port": "8082",
-					"path": [
-						"schedule",
-						"employee",
-						"2"
-					]
+					"path": ["schedule", "customer", "1"]
 				}
 			},
 			"response": []
@@ -373,14 +323,9 @@
 				"url": {
 					"raw": "http://localhost:8082/user/customer",
 					"protocol": "http",
-					"host": [
-						"localhost"
-					],
+					"host": ["localhost"],
 					"port": "8082",
-					"path": [
-						"user",
-						"customer"
-					]
+					"path": ["user", "customer"]
 				}
 			},
 			"response": []
@@ -412,14 +357,9 @@
 				"url": {
 					"raw": "http://localhost:8082/user/customer",
 					"protocol": "http",
-					"host": [
-						"localhost"
-					],
+					"host": ["localhost"],
 					"port": "8082",
-					"path": [
-						"user",
-						"customer"
-					]
+					"path": ["user", "customer"]
 				}
 			},
 			"response": []
@@ -451,15 +391,9 @@
 				"url": {
 					"raw": "http://localhost:8082/pet/owner/1",
 					"protocol": "http",
-					"host": [
-						"localhost"
-					],
+					"host": ["localhost"],
 					"port": "8082",
-					"path": [
-						"pet",
-						"owner",
-						"1"
-					]
+					"path": ["pet", "owner", "1"]
 				}
 			},
 			"response": []
@@ -491,16 +425,9 @@
 				"url": {
 					"raw": "http://localhost:8082/user/customer/pet/1",
 					"protocol": "http",
-					"host": [
-						"localhost"
-					],
+					"host": ["localhost"],
 					"port": "8082",
-					"path": [
-						"user",
-						"customer",
-						"pet",
-						"1"
-					]
+					"path": ["user", "customer", "pet", "1"]
 				}
 			},
 			"response": []

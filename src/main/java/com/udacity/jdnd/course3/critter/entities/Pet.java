@@ -1,7 +1,9 @@
 package com.udacity.jdnd.course3.critter.entities;
 
 import java.time.LocalDate;
-import com.udacity.jdnd.course3.critter.pet.PetType;
+
+import com.udacity.jdnd.course3.critter.enums.PetType;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -81,13 +83,7 @@ public class Pet {
 
     @Override
     public String toString() {
-        return "Pet{" +
-                "id=" + id +
-                ", type=" + type +
-                ", name='" + name + '\'' +
-                ", customer=" + customer +
-                ", birthDate=" + birthDate +
-                ", notes='" + notes + '\'' +
-                '}';
+        return String.format("Pet[id=%d, type=%s, name='%s', customerId=%d, birthDate=%s, notes='%s']", 
+                id, type, name, customer != null ? customer.getId() : null, birthDate, notes);
     }
 }
