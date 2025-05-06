@@ -16,6 +16,8 @@
 
 	<properties>
 		<java.version>21</java.version>
+		<author.name>Mahesh</author.name>
+		<author.eid>venkata.m.polumuri@accenture.com</author.eid>
 	</properties>
 
 	<dependencies>
@@ -76,6 +78,12 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<jvmArguments>
+						-Dauthor.name=${author.name}
+						-Dauthor.eid=${author.eid}
+					</jvmArguments>
+				</configuration>
 			</plugin>
 		</plugins>
 	</build>
